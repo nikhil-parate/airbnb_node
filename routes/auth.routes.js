@@ -13,7 +13,7 @@ router.post('/login',async (req,res)=>{
    
 })
 router.get('/',async (req,res)=>{
-    console.log(req.body,"login");
+    console.log(req.body,"data");
     await authservice.userData(req.body, res);
    
 })
