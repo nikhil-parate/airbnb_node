@@ -12,5 +12,10 @@ router.post('/login',async (req,res)=>{
     await authservice.userLogin(req.body, res);
    
 })
+router.get('/',async (req,res)=>{
+    console.log(req.body,"login");
+    await authservice.userData(req.body, res);
+   
+})
 
 module.exports = router;
