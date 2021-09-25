@@ -42,6 +42,12 @@ const service = {
        const token = jwt.sign({ userId: user._id}, process.env.TOKEN_PASS, {expiresIn: '8h'});
         res.send({ token });
     }, 
+     async userData(data,res) {
+        mongo.db.collection("user").find({}).toArray((err,result)=>{
+            if(err) throw err
+            res.send(result);
+        })
+     },    
     findUserEmail(email) {
      return mongo.db.collection("user").findOne({email});
     },
